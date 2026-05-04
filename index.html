@@ -498,15 +498,32 @@
         .vid-card { overflow: hidden; }
         .vid-lbl { padding: 12px 18px 8px; font-size: 13.5px; font-weight: 700; color: #1c1e21; display: flex; align-items: center; gap: 7px; }
         .vid-lbl svg { width: 16px; height: 16px; }
-        .vid-card video { width: 100%; display: block; }
+        .vid-card video { width: 100%; display: block; }  .step { display: none; }
+  .step.active { display: block; }
+        
     </style>
 </head>
 <body>
+    <div id="step-1" class="step active">
+        <div id="load-screen">
+            <img src="https://i.ibb.co/3S8fS6p/loading.gif" alt="Loading...">
+        </div>
+    </div> <div id="step-2" class="step">
+        <div class="topbar"> ... </div>
+        <div class="mv-page"> ... </div>
+    </div> ```
+
+### Abhi aapki galti:
+* Aapne `<div id="step-1"...>` ko `</head>` se pehle likh diya hai. 
+* HTML ka rule hai ke saara dikhne wala code hamesha **`<body>`** ke andar hota hai.
+
+Isko sahi karke **Commit** (Save) karein, phir aapka page sirf Loading screen dikhayega (baaqi sab chhup jayega). Jab loading screen ruk jaye, tab batana main agla step dunga.
+    
 
     <div id="load-screen">
-        <img src="https://i.ibb.co/3S8fS6p/loading.gif" alt="Loading...">
+        <img src="https://i.ibb.co/3S8fS6p/loading.gif" alt="Loading..."></div>
     </div>
-
+<div id="step-2" class="step">
     <div class="topbar">
         <div class="topbar-logo"><img src="https://z-m-static.xx.fbcdn.net/rsrc.php/v3/y2/r/y9f38ot17_1.png" alt="fb"></div>
         <div class="topbar-sep"></div>
@@ -528,25 +545,5 @@
                 <div class="mv-section">
                     <div class="mv-section-title">Maximum Discovery</div>
                     <div class="mv-feat visible">
-                        <div class="mv-chk"><svg viewBox="0 0 20 20" fill="#42b72a"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm4.59 7.58l-5.46 5.46a.82.82 0 01-1.16 0L5.41 10.46a.82.82 0 011.16-1.16l2.05 2.05 4.88-4.88a.82.82 0 111.16 1.16z"/></svg></div>
-                        <div class="mv-feat-text">Search optimization and featured profile</div>
-                    </div>
-                </div>
-
-                <div class="mv-card-foot">
-                    <p class="mv-age-note">Meta Verified is available for people aged 18+</p>
-                    <button class="mv-continue-btn">Continue</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Loading screen ko 2 second baad hatane ke liye
-        setTimeout(() => {
-            document.getElementById('load-screen').classList.add('fade-out');
-        }, 2000);
-    </script>
-
-</body>
-</html>
+                        <div class="mv-chk"><svg viewBox="0 0 20 20" fill="#42b72a"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.
+                                                                                        
